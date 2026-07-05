@@ -175,7 +175,7 @@ export const PORTFOLIO = {
     { group: 'Frontend', items: ['React', 'Next.js', 'Redux', 'TypeScript', 'Material UI', 'Bootstrap'] },
     { group: 'Languages', items: ['JavaScript', 'PHP', 'Python', 'HTML', 'CSS'] },
     { group: 'Data', items: ['PostgreSQL', 'MySQL', 'OpenSearch', 'DynamoDB', 'Firestore', 'Redis'] },
-    { group: 'Cloud & DevOps', items: ['AWS', 'Docker', 'Pulumi', 'Firebase', 'GitHub Actions', 'Supervisor'] },
+    { group: 'Cloud & DevOps', items: ['AWS', 'Oracle', 'Cloudflare', 'Docker', 'Pulumi', 'Firebase', 'GitHub Actions', 'Supervisor'] },
     { group: 'AI', items: ['LangChain', 'RAG', 'OpenAI', 'GitHub Copilot'] },
     { group: 'Media & Security', items: ['FFmpeg', 'AES', 'HLS', 'CloudFront'] },
     { group: 'Payments', items: ['Razorpay', 'Stripe', 'Paytm'] },

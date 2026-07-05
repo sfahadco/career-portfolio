@@ -7,13 +7,23 @@ import { SectionLabel, Tag } from '../ds';
 import { PORTFOLIO } from '../data.js';
 import { SKILL_ICONS, GENERIC_ICON_PATH } from '../skillIcons.js';
 
-// Brand hex is used as-is unless it's too dark to read on the near-black canvas,
-// in which case we fall back to a light tone (Next.js/Symfony/etc. are black).
+// Brand hex is used as-is unless its WCAG contrast against the near-black canvas
+// is too low to read (Next.js/Symfony are black, AWS is dark navy, OpenAI is dark
+// purple), in which case we fall back to a light tone. Using contrast rather than
+// raw luminance keeps vivid-but-darkish brand colours (e.g. Oracle red) intact.
 const LIGHT_ICON = '#e6e7e1';
+function relLuminance(hex) {
+  const lin = [1, 3, 5].map((i) => {
+    const v = parseInt(hex.slice(i, i + 2), 16) / 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2];
+}
+const BG_LUMINANCE = relLuminance('#08090a'); // --ink-900 (page canvas)
 function iconColor(hex) {
-  const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
-  const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  return lum < 55 ? LIGHT_ICON : hex;
+  const l = relLuminance(hex);
+  const contrast = (Math.max(l, BG_LUMINANCE) + 0.05) / (Math.min(l, BG_LUMINANCE) + 0.05);
+  return contrast < 2.5 ? LIGHT_ICON : hex;
 }
 
 function SkillIcon({ name }) {
