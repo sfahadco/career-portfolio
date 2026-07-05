@@ -4,6 +4,7 @@
 import Nav from './components/Nav.jsx';
 import Hero from './components/Hero.jsx';
 import Marquee from './components/Marquee.jsx';
+import Highlight from './components/Highlight.jsx';
 import Projects from './components/Projects.jsx';
 import Experience from './components/Experience.jsx';
 import Education from './components/Education.jsx';
@@ -18,6 +19,7 @@ export default function App() {
       <main>
         <Hero />
         <Marquee />
+        <Highlight />
         <Projects />
         <Experience />
         <Education />

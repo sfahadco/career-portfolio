@@ -16,7 +16,7 @@ export function SectionLabel({
       alignItems: 'center',
       gap: 10,
       fontFamily: 'var(--font-mono)',
-      fontSize: 'var(--fs-mono-xs)',
+      fontSize: '13px',
       fontWeight: 'var(--fw-medium)',
       letterSpacing: 'var(--ls-mono)',
       textTransform: 'uppercase',

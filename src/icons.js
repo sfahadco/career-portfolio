@@ -14,6 +14,7 @@ const P = (d) => React.createElement('path', { d, key: d });
 
 export const Ic = {
   ArrowRight: (p) => S({ ...p, children: [P('M5 12h14'), P('m12 5 7 7-7 7')] }),
+  ArrowLeft: (p) => S({ ...p, children: [P('M19 12H5'), P('m12 19-7-7 7-7')] }),
   ArrowUpRight: (p) => S({ ...p, children: [P('M7 7h10v10'), P('M7 17 17 7')] }),
   ArrowDown: (p) => S({ ...p, children: [P('M12 5v14'), P('m19 12-7 7-7-7')] }),
   Mail: (p) => S({ ...p, children: [React.createElement('rect', { key: 'r', width: 20, height: 16, x: 2, y: 4, rx: 2 }), P('m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7')] }),

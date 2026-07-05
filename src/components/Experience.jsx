@@ -12,7 +12,7 @@ export default function Experience() {
     <section id="experience" style={{ padding: 'var(--section-y) 0', scrollMarginTop: 80, background: 'var(--ink-850)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
       <div style={{ maxWidth: 'var(--container)', margin: '0 auto', padding: '0 var(--gutter)' }}>
         <div style={{ marginBottom: 52 }}>
-          <SectionLabel index="02">Career</SectionLabel>
+          <SectionLabel index="02">Experience</SectionLabel>
           <h2 style={{ marginTop: 18, fontSize: 'var(--fs-h2)', maxWidth: '18ch' }}>Seven years, four teams.</h2>
         </div>
 

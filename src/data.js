@@ -27,6 +27,30 @@ export const PORTFOLIO = {
     { value: '1', label: 'Excellence award' },
   ],
 
+  // Headline differentiators — the "why me" callout gallery. Add/remove an entry
+  // to add/remove a slide; the arrows + dots update automatically. Each `emphasis`
+  // phrase must appear verbatim in `statement` to get accent-coloured.
+  highlights: [
+    {
+      eyebrow: 'End-to-end ownership',
+      statement: 'I build applications from zero to one — development to deployment, backend and frontend — entirely on my own.',
+      emphasis: ['zero to one', 'entirely on my own'],
+      facets: ['Architecture', 'Backend', 'Frontend', 'CI/CD', 'Deployment'],
+    },
+    {
+      eyebrow: 'AI · RAG',
+      statement: 'I built a personalized chatbot for a K-12 STEM LMS, powered by a Retrieval-Augmented Generation system.',
+      emphasis: ['personalized chatbot', 'Retrieval-Augmented Generation'],
+      facets: ['Python', 'Flask', 'LangChain', 'OpenAI', 'OpenSearch'],
+    },
+    {
+      eyebrow: 'Data platform',
+      statement: 'I built a data pipeline and analytics platform end to end — from collecting data across sources to schemas, queries, models, and AWS QuickSight dashboards.',
+      emphasis: ['data pipeline and analytics platform', 'AWS QuickSight dashboards'],
+      facets: ['Events', 'Database', 'EventBridge', 'S3', 'AWS Glue', 'Athena', 'dbt', 'QuickSight'],
+    },
+  ],
+
   // Headline case studies — the work worth leading with.
   projects: [
     {
@@ -83,8 +107,13 @@ export const PORTFOLIO = {
       period: 'Nov 2025 — Jun 2026',
       location: 'Remote',
       points: [
-        'Architected and shipped a multi-tenant email marketing SaaS end to end (Laravel 12, React 19, TypeScript, PostgreSQL).',
-        'Built Redis-backed queue infrastructure, containerized the stack with Docker Compose, and automated deploys via GitHub Actions → OCI.',
+        'Architected and built a production-grade, multi-tenant email marketing SaaS from scratch (Laravel 12, React 19, TypeScript, PostgreSQL) with campaign management and contact segmentation.',
+        'Integrated Amazon SES for high-deliverability sending, with SNS webhook handlers processing bounce, complaint, and delivery events using signed-message validation.',
+        'Designed a Redis-backed queue with a Laravel scheduler and worker containers for scheduled dispatch, sequence automation, and retry logic on large-volume sends.',
+        'Developed a rich WYSIWYG email template editor with merge tags, image uploads, and responsive preview.',
+        'Established end-to-end test coverage with Playwright.',
+        'Containerized the full stack with Docker Compose (web app, queue workers, scheduler, Redis) for consistent development and deployment.',
+        'Built a CI/CD pipeline with GitHub Actions — on-demand triggers building Docker images from target branches and publishing to Oracle Cloud (OCI) Container Registry.',
       ],
       stack: ['Laravel', 'React', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker'],
     },
@@ -94,8 +123,12 @@ export const PORTFOLIO = {
       period: 'Dec 2022 — Nov 2025',
       location: 'Mumbai, India',
       points: [
-        'Built PHP/Symfony microservices with gRPC APIs for a K-12 STEM platform, plus a RAG/LangChain science chatbot.',
-        'Architected an end-to-end AWS analytics pipeline (S3 → Glue → dbt/Athena → QuickSight) for cross-team reporting.',
+        "Built and maintained backend microservices in PHP/Symfony over PostgreSQL for AccelerateLearning's K-12 STEM platform, exposing strongly-typed gRPC APIs between services.",
+        'Developed a science chatbot using RAG, LangChain, and OpenSearch with DynamoDB-backed conversation memory for contextual, memory-aware student support.',
+        'Integrated ChatGPT for AI-assisted academic support with content-moderation safeguards to keep real-time interactions age-appropriate.',
+        "Embedded Learnosity's question-authoring and assessment engine to power interactive STEM assessments across the platform.",
+        'Architected an end-to-end AWS analytics pipeline — ingesting into an S3 data lake, cataloging with AWS Glue, and modeling into analytics-ready datasets via dbt on Amazon Athena.',
+        'Delivered curated datasets through Amazon QuickSight dashboards, enabling cross-team reporting and self-service, data-driven decisions.',
       ],
       stack: ['PHP', 'Symfony', 'gRPC', 'LangChain', 'AWS'],
       award: 'Individual Excellence Award',
@@ -107,8 +140,9 @@ export const PORTFOLIO = {
       period: 'Jan 2021 — Dec 2022',
       location: 'Mumbai, India',
       points: [
-        'Built a production LMS (Laravel, React, Next.js, MySQL) with HLS/AES-encrypted video over CloudFront.',
-        'Integrated multi-gateway payments and a multi-tenant affiliate/referral system.',
+        'Architected and built a production LMS (Laravel, React, Next.js, MySQL) with secure video streaming (HLS/AES) delivered globally via AWS CloudFront for low-latency, protected playback.',
+        'Integrated multi-gateway payments (Razorpay, Stripe, Paytm) and social authentication for flexible monetization and frictionless onboarding.',
+        'Implemented a multi-tenant architecture with a built-in affiliate/referral system, enabling scalable deployment across institutions while driving growth.',
       ],
       stack: ['Laravel', 'Next.js', 'MySQL', 'CloudFront'],
     },
@@ -118,8 +152,9 @@ export const PORTFOLIO = {
       period: 'Dec 2019 — Jan 2021',
       location: 'Mumbai, India',
       points: [
-        'Engineered a rebate-calculation tool for sales-incentive forecasting and an automated ticket system for Dell support teams.',
-        'Designed a self-service HR platform with payroll and leave modules.',
+        'Engineered a dynamic rebate-calculation tool for sales incentives, enabling accurate earnings forecasting to refine distributor strategies.',
+        "Replaced manual Excel tracking with an automated ticket-management system, streamlining issue tracking and resolution for Dell's support teams.",
+        'Designed a self-service HR platform with payroll and leave modules, centralizing employee data and reducing administrative workload.',
       ],
       stack: ['PHP', 'MySQL', 'jQuery'],
     },
@@ -129,7 +164,7 @@ export const PORTFOLIO = {
       period: 'Mar 2019 — Dec 2019',
       location: 'Mumbai, India',
       points: [
-        'Automated candidate tracking and interview reminders with a custom web portal, cutting manual errors.',
+        'Automated candidate tracking and interview reminders with a custom web portal, reducing manual errors and improving hiring-cycle efficiency.',
       ],
       stack: ['PHP', 'MySQL'],
     },
