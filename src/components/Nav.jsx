@@ -62,7 +62,7 @@ export default function Nav() {
           <a key={n.id} href={'#' + n.id}
              onClick={(e) => { e.preventDefault(); go(n.id); }}
              style={{
-               fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.04em',
+               fontFamily: 'var(--font-mono)', fontSize: 14, letterSpacing: '0.04em',
                padding: '8px 12px', borderRadius: 'var(--radius-sm)',
                color: active === n.id ? 'var(--accent)' : 'var(--text-secondary)',
                transition: 'color var(--dur-fast)', cursor: 'pointer',
@@ -77,7 +77,7 @@ export default function Nav() {
       {/* desktop right cluster */}
       <div className="nav-desktop-actions" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
         {P.identity.available && (
-          <span className="nav-avail"><Badge tone="accent" dot>Available</Badge></span>
+          <span className="nav-avail"><Badge style={{fontSize: 12}} tone="accent" dot>Immediately Available</Badge></span>
         )}
         <Button as="a" href={P.identity.resume} download size="sm" variant="secondary" iconRight={<Ic.Download size={15} />}>Résumé</Button>
         <Button size="sm" variant="primary" onClick={() => go('contact')}>Get in touch</Button>

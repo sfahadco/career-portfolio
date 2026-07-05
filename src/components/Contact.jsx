@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(32px, 6vw, 88px)', alignItems: 'start' }}>
           {/* left — pitch */}
           <div>
-            <SectionLabel index="04">Contact</SectionLabel>
+            <SectionLabel index="05">Contact</SectionLabel>
             <h2 style={{ marginTop: 18, fontSize: 'var(--fs-h2)', lineHeight: 1.02 }}>Let's build<br />something solid.</h2>
             <p style={{ marginTop: 22, maxWidth: '38ch', fontSize: 'var(--fs-body-lg)', lineHeight: 1.55, color: 'var(--text-secondary)' }}>
               Open to full-stack, backend and platform roles — and interesting consulting work. Tell me what you're building.

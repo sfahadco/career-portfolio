@@ -35,6 +35,7 @@ export function Stat({
         marginTop: 8,
         fontFamily: 'var(--font-mono)',
         fontSize: 'var(--fs-mono-xs)',
+        fontWeight: 'var(--fw-bold)',
         letterSpacing: 'var(--ls-mono)',
         textTransform: 'uppercase',
         color: 'var(--text-tertiary)',

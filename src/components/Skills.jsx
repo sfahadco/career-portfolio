@@ -11,7 +11,7 @@ export default function Skills() {
     <section id="skills" style={{ padding: 'var(--section-y) 0', scrollMarginTop: 80 }}>
       <div style={{ maxWidth: 'var(--container)', margin: '0 auto', padding: '0 var(--gutter)' }}>
         <div style={{ marginBottom: 48 }}>
-          <SectionLabel index="03">Toolkit</SectionLabel>
+          <SectionLabel index="04">Toolkit</SectionLabel>
           <h2 style={{ marginTop: 18, fontSize: 'var(--fs-h2)', maxWidth: '20ch' }}>The stack I reach for.</h2>
         </div>
         <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--border-subtle)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>

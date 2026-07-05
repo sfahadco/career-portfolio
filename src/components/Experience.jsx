@@ -52,17 +52,6 @@ export default function Experience() {
             </div>
           ))}
         </div>
-
-        {/* education footnote */}
-        <div style={{ marginTop: 44, paddingTop: 28, borderTop: '1px solid var(--border-subtle)', display: 'flex', gap: 48, flexWrap: 'wrap' }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-tertiary)' }}>Education</div>
-          {P.education.map((e, i) => (
-            <div key={i}>
-              <div style={{ fontSize: 15, color: 'var(--text-primary)', fontWeight: 500 }}>{e.school}</div>
-              <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', marginTop: 3 }}>{e.detail} · <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-tertiary)' }}>{e.period}</span></div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

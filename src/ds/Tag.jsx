@@ -32,6 +32,18 @@ export function Tag({
       transition: 'color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast)',
       ...style,
     },
+    onMouseEnter: (e) => {
+      if (active) return;
+      e.currentTarget.style.background = 'var(--accent)';
+      e.currentTarget.style.color = 'var(--text-on-accent)';
+      e.currentTarget.style.borderColor = 'var(--accent)';
+    },
+    onMouseLeave: (e) => {
+      if (active) return;
+      e.currentTarget.style.background = 'transparent';
+      e.currentTarget.style.color = 'var(--text-secondary)';
+      e.currentTarget.style.borderColor = 'var(--border-strong)';
+    },
     ...rest,
   }, children);
 }

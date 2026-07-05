@@ -21,8 +21,8 @@ export const PORTFOLIO = {
   },
 
   stats: [
-    { value: '6+', label: 'Years shipping' },
-    { value: '5', label: 'Companies' },
+    { value: '7+', label: 'Years shipping' },
+    { value: '4', label: 'Companies' },
     { value: '3', label: 'Multi-tenant SaaS built' },
     { value: '1', label: 'Excellence award' },
   ],
