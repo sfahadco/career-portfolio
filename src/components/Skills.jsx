@@ -1,9 +1,20 @@
 /* ─── Skills ──────────────────────────────────────────────────────────────
    Grouped tech grid. One cell per group in PORTFOLIO.skills; chips are the
-   group's items. Add a group or an item there — the grid reflows automatically.
+   group's items, each prefixed with its technology icon. Add a group or an
+   item there — the grid reflows automatically.
    ──────────────────────────────────────────────────────────────────────── */
 import { SectionLabel, Tag } from '../ds';
 import { PORTFOLIO } from '../data.js';
+import { SKILL_ICON_PATHS, GENERIC_ICON_PATH } from '../skillIcons.js';
+
+function SkillIcon({ name }) {
+  const d = SKILL_ICON_PATHS[name] || GENERIC_ICON_PATH;
+  return (
+    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" style={{ flex: 'none', opacity: 0.9 }}>
+      <path d={d} />
+    </svg>
+  );
+}
 
 export default function Skills() {
   const P = PORTFOLIO;
@@ -19,7 +30,11 @@ export default function Skills() {
             <div key={g.group} style={{ background: 'var(--bg-canvas)', padding: '22px 22px 24px' }}>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>{g.group}</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
-                {g.items.map((it) => <Tag key={it} size="sm">{it}</Tag>)}
+                {g.items.map((it) => (
+                  <Tag key={it} size="sm" style={{ fontSize: 12.5, gap: 6 }}>
+                    <SkillIcon name={it} />{it}
+                  </Tag>
+                ))}
               </div>
             </div>
           ))}
