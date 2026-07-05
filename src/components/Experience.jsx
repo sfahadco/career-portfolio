@@ -46,12 +46,12 @@ export default function Experience() {
                       style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 16, color: 'var(--status-warning)', fontFamily: 'var(--font-mono)', fontSize: 12.5, cursor: 'pointer', transition: 'opacity var(--dur-fast)' }}
                       onMouseEnter={(e) => e.currentTarget.style.opacity = 0.7}
                       onMouseLeave={(e) => e.currentTarget.style.opacity = 1}>
-                      <Ic.Award size={15} className="award-blink" /> {job.award}
+                      <Ic.Award size={15} className="award-blink" /> <span style={{ fontWeight: 'var(--fw-bold)' }}>{job.award}</span>
                       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, color: 'var(--text-tertiary)' }}><Ic.Download size={13} /> Certificate</span>
                     </a>
                   ) : (
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 16, color: 'var(--status-warning)', fontFamily: 'var(--font-mono)', fontSize: 12.5 }}>
-                      <Ic.Award size={15} className="award-blink" /> {job.award}
+                      <Ic.Award size={15} className="award-blink" /> <span style={{ fontWeight: 'var(--fw-bold)' }}>{job.award}</span>
                     </div>
                   )
                 )}
