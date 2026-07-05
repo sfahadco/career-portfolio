@@ -275,6 +275,14 @@ a { color: inherit; text-decoration: none; }
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes awardBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+.award-blink { animation: awardBlink 1.3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .award-blink { animation: none; }
+}
 
 /* Mobile nav — the hamburger + drop panel only exist below 900px. */
 .nav-menu-btn { display: none; }

@@ -102,8 +102,7 @@ export const PORTFOLIO = {
   // Full career timeline.
   experience: [
     {
-      company: 'Independent Software Consultant',
-      role: 'Full-Stack Engineer',
+      role: 'Independent Software Consultant',
       period: 'Nov 2025 — Jun 2026',
       location: 'Remote',
       points: [

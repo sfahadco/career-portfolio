@@ -31,7 +31,7 @@ export default function Experience() {
               <div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
                   <h3 style={{ fontSize: 'var(--fs-h4)' }}>{job.role}</h3>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--accent)' }}>@ {job.company}</span>
+                  {job.company && <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--accent)' }}>@ {job.company}</span>}
                 </div>
                 <ul style={{ listStyle: 'none', margin: '16px 0 0', padding: 0, display: 'flex', flexDirection: 'column', gap: 9 }}>
                   {job.points.map((pt, j) => (
@@ -46,12 +46,12 @@ export default function Experience() {
                       style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 16, color: 'var(--status-warning)', fontFamily: 'var(--font-mono)', fontSize: 12.5, cursor: 'pointer', transition: 'opacity var(--dur-fast)' }}
                       onMouseEnter={(e) => e.currentTarget.style.opacity = 0.7}
                       onMouseLeave={(e) => e.currentTarget.style.opacity = 1}>
-                      <Ic.Award size={15} /> {job.award}
+                      <Ic.Award size={15} className="award-blink" /> {job.award}
                       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, color: 'var(--text-tertiary)' }}><Ic.Download size={13} /> Certificate</span>
                     </a>
                   ) : (
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 16, color: 'var(--status-warning)', fontFamily: 'var(--font-mono)', fontSize: 12.5 }}>
-                      <Ic.Award size={15} /> {job.award}
+                      <Ic.Award size={15} className="award-blink" /> {job.award}
                     </div>
                   )
                 )}
