@@ -81,7 +81,7 @@ export default function Hero() {
                   <path id="otwTextPath" d="M 3.95 43.53 A 46.5 46.5 0 0 0 67.42 93.11" fill="none" />
                 </defs>
                 <circle cx="50" cy="50" r="44" fill="none" stroke="url(#otwGrad)" strokeWidth="13" />
-                <text fill="#ffffff" fontFamily="var(--font-display)" fontWeight="700" fontSize="6.2" letterSpacing="0.15">
+                <text fill="#ffffff" fontFamily="var(--font-display)" fontWeight="700" fontSize="6.2" letterSpacing="0.5">
                   <textPath href="#otwTextPath" startOffset="50%" textAnchor="middle">#IMMEDIATELY AVAILABLE</textPath>
                 </text>
               </svg>
