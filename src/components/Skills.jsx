@@ -5,7 +5,7 @@
    ──────────────────────────────────────────────────────────────────────── */
 import { SectionLabel, Tag } from '../ds';
 import { PORTFOLIO } from '../data.js';
-import { SKILL_ICONS, GENERIC_ICON_PATH } from '../skillIcons.js';
+import { SKILL_ICONS, SKILL_ICON_SVGS, GENERIC_ICON_PATH } from '../skillIcons.js';
 
 // Brand hex is used as-is unless its WCAG contrast against the near-black canvas
 // is too low to read (Next.js/Symfony are black, AWS is dark navy, OpenAI is dark
@@ -27,6 +27,14 @@ function iconColor(hex) {
 }
 
 function SkillIcon({ name }) {
+  // Full multi-path / multi-colour brand SVGs (e.g. gRPC) render verbatim.
+  const raw = SKILL_ICON_SVGS[name];
+  if (raw) {
+    return (
+      <svg className="skill-icon" viewBox={raw.viewBox} width={raw.width || 14} height={raw.height || 14}
+        aria-hidden="true" style={{ flex: 'none' }} dangerouslySetInnerHTML={{ __html: raw.inner }} />
+    );
+  }
   const icon = SKILL_ICONS[name];
   const d = icon ? icon.path : GENERIC_ICON_PATH;
   const fill = icon ? iconColor(icon.hex) : 'currentColor';
