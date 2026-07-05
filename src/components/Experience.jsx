@@ -2,7 +2,7 @@
    Vertical career timeline + an education footnote. Rows come from
    PORTFOLIO.experience; education from PORTFOLIO.education.
    ──────────────────────────────────────────────────────────────────────── */
-import { SectionLabel, Tag, Badge } from '../ds';
+import { SectionLabel, Badge } from '../ds';
 import { PORTFOLIO } from '../data.js';
 import { Ic } from '../icons.js';
 
@@ -55,9 +55,6 @@ export default function Experience() {
                     </div>
                   )
                 )}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginTop: 16 }}>
-                  {job.stack.map((s) => <Tag key={s} size="sm">{s}</Tag>)}
-                </div>
               </div>
             </div>
           ))}
