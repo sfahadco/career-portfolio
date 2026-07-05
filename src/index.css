@@ -262,6 +262,10 @@ a { color: inherit; text-decoration: none; }
 ::-webkit-scrollbar-thumb { background: var(--ink-500); border-radius: 999px; border: 3px solid var(--ink-900); }
 ::-webkit-scrollbar-thumb:hover { background: var(--ink-400); }
 
+/* Skill chips show brand-coloured icons at rest, but darken to match the chip
+   text when the chip is hovered (accent fill). */
+.skill-chip:hover .skill-icon { fill: var(--text-on-accent) !important; }
+
 /* ─── APP MOTION + RESPONSIVE COLLAPSES ────────────────────────────────────── */
 @keyframes marq {
   from { transform: translateX(0); }

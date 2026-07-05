@@ -5,12 +5,23 @@
    ──────────────────────────────────────────────────────────────────────── */
 import { SectionLabel, Tag } from '../ds';
 import { PORTFOLIO } from '../data.js';
-import { SKILL_ICON_PATHS, GENERIC_ICON_PATH } from '../skillIcons.js';
+import { SKILL_ICONS, GENERIC_ICON_PATH } from '../skillIcons.js';
+
+// Brand hex is used as-is unless it's too dark to read on the near-black canvas,
+// in which case we fall back to a light tone (Next.js/Symfony/etc. are black).
+const LIGHT_ICON = '#e6e7e1';
+function iconColor(hex) {
+  const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
+  const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  return lum < 55 ? LIGHT_ICON : hex;
+}
 
 function SkillIcon({ name }) {
-  const d = SKILL_ICON_PATHS[name] || GENERIC_ICON_PATH;
+  const icon = SKILL_ICONS[name];
+  const d = icon ? icon.path : GENERIC_ICON_PATH;
+  const fill = icon ? iconColor(icon.hex) : 'currentColor';
   return (
-    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" style={{ flex: 'none', opacity: 0.9 }}>
+    <svg className="skill-icon" viewBox="0 0 24 24" width="13" height="13" fill={fill} aria-hidden="true" style={{ flex: 'none' }}>
       <path d={d} />
     </svg>
   );
@@ -31,7 +42,7 @@ export default function Skills() {
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>{g.group}</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
                 {g.items.map((it) => (
-                  <Tag key={it} size="sm" style={{ fontSize: 12.5, gap: 6 }}>
+                  <Tag key={it} size="sm" className="skill-chip" style={{ fontSize: 12.5, gap: 6 }}>
                     <SkillIcon name={it} />{it}
                   </Tag>
                 ))}
