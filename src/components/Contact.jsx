@@ -25,11 +25,11 @@ export default function Contact() {
   // status: 'idle' | 'sending' | 'success' | 'error'
   const [status, setStatus] = React.useState('idle');
   const [errorMsg, setErrorMsg] = React.useState('');
-  const [copied, setCopied] = React.useState(false);
+  const [copiedField, setCopiedField] = React.useState(null);
 
-  const copyEmail = () => {
-    if (navigator.clipboard) navigator.clipboard.writeText(id.email);
-    setCopied(true); setTimeout(() => setCopied(false), 1600);
+  const copy = (field, value) => {
+    if (navigator.clipboard) navigator.clipboard.writeText(value);
+    setCopiedField(field); setTimeout(() => setCopiedField(null), 1600);
   };
 
   const onSubmit = async (e) => {
@@ -81,7 +81,7 @@ export default function Contact() {
             </p>
 
             <div style={{ marginTop: 32, display: 'flex', flexDirection: 'column', gap: 14 }}>
-              <button onClick={copyEmail} style={{
+              <button onClick={() => copy('email', id.email)} style={{
                 display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer',
                 background: 'transparent', border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-sm)', padding: '13px 16px', textAlign: 'left', width: 'fit-content',
@@ -89,9 +89,22 @@ export default function Contact() {
               }}
                 onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent)'}
                 onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-default)'}>
-                <span style={{ color: 'var(--accent)' }}>{copied ? <Ic.Check size={17} /> : <Ic.Mail size={17} />}</span>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13.5 }}>{copied ? 'Copied to clipboard' : id.email}</span>
-                {!copied && <span style={{ color: 'var(--text-tertiary)' }}><Ic.Copy size={14} /></span>}
+                <span style={{ color: 'var(--accent)' }}>{copiedField === 'email' ? <Ic.Check size={17} /> : <Ic.Mail size={17} />}</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13.5 }}>{copiedField === 'email' ? 'Copied to clipboard' : id.email}</span>
+                {copiedField !== 'email' && <span style={{ color: 'var(--text-tertiary)' }}><Ic.Copy size={14} /></span>}
+              </button>
+
+              <button onClick={() => copy('phone', id.phone)} style={{
+                display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer',
+                background: 'transparent', border: '1px solid var(--border-default)',
+                borderRadius: 'var(--radius-sm)', padding: '13px 16px', textAlign: 'left', width: 'fit-content',
+                color: 'var(--text-primary)', transition: 'border-color var(--dur-fast)',
+              }}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent)'}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-default)'}>
+                <span style={{ color: 'var(--accent)' }}>{copiedField === 'phone' ? <Ic.Check size={17} /> : <Ic.Phone size={17} />}</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13.5 }}>{copiedField === 'phone' ? 'Copied to clipboard' : id.phone}</span>
+                {copiedField !== 'phone' && <span style={{ color: 'var(--text-tertiary)' }}><Ic.Copy size={14} /></span>}
               </button>
 
               <div style={{ display: 'flex', gap: 10 }}>

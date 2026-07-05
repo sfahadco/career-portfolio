@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers config — serves the Vite production build (./dist) as a
+  // static site. `npm run build` produces ./dist, then `npx wrangler deploy`
+  // uploads it. The app has no server-side routes, so unknown paths fall back
+  // to index.html (harmless for this anchor-scroll site, future-proof for routes).
+  "name": "career-portfolio",
+  "compatibility_date": "2024-12-30",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

@@ -12,7 +12,7 @@ export const PORTFOLIO = {
     available: true,
     tagline: 'I build scalable web apps, AI-driven tools, and robust data pipelines that streamline how businesses work.',
     email: 'skfahadco@gmail.com',
-    phone: '+91 84248 19943',
+    phone: '+91-8424819943',
     resume: '/Resume.pdf',
     links: [
       { label: 'Email', href: 'mailto:skfahadco@gmail.com', kind: 'email' },

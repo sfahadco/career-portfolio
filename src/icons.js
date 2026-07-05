@@ -18,6 +18,7 @@ export const Ic = {
   ArrowUpRight: (p) => S({ ...p, children: [P('M7 7h10v10'), P('M7 17 17 7')] }),
   ArrowDown: (p) => S({ ...p, children: [P('M12 5v14'), P('m19 12-7 7-7-7')] }),
   Mail: (p) => S({ ...p, children: [React.createElement('rect', { key: 'r', width: 20, height: 16, x: 2, y: 4, rx: 2 }), P('m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7')] }),
+  Phone: (p) => S({ ...p, children: [P('M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z')] }),
   MapPin: (p) => S({ ...p, children: [P('M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'), React.createElement('circle', { key: 'c', cx: 12, cy: 10, r: 3 })] }),
   Award: (p) => S({ ...p, children: [React.createElement('circle', { key: 'c', cx: 12, cy: 8, r: 6 }), P('M15.477 12.89 17 22l-5-3-5 3 1.523-9.11')] }),
   Copy: (p) => S({ ...p, children: [React.createElement('rect', { key: 'r', width: 14, height: 14, x: 8, y: 8, rx: 2, ry: 2 }), P('M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2')] }),
