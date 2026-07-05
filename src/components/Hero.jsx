@@ -77,12 +77,12 @@ export default function Hero() {
                     <stop offset="0.62" stopColor="#6aa83c" stopOpacity="1" />
                     <stop offset="1" stopColor="#2f6b1f" stopOpacity="1" />
                   </linearGradient>
-                  {/* text arc centred on the bottom-left (~128°), reading up-left → bottom-right */}
-                  <path id="otwTextPath" d="M 4.03 51.6 A 46 46 0 0 0 59.56 95.0" fill="none" />
+                  {/* text arc centred on the bottom-left (~128°, span ~120°), up-left → bottom-right */}
+                  <path id="otwTextPath" d="M 3.95 43.53 A 46.5 46.5 0 0 0 67.42 93.11" fill="none" />
                 </defs>
-                <circle cx="50" cy="50" r="44" fill="none" stroke="url(#otwGrad)" strokeWidth="12" />
-                <text fill="#ffffff" fontFamily="var(--font-display)" fontWeight="700" fontSize="6.4" letterSpacing="0.6">
-                  <textPath href="#otwTextPath" startOffset="50%" textAnchor="middle">#OPENTOWORK</textPath>
+                <circle cx="50" cy="50" r="44" fill="none" stroke="url(#otwGrad)" strokeWidth="13" />
+                <text fill="#ffffff" fontFamily="var(--font-display)" fontWeight="700" fontSize="6.2" letterSpacing="0.15">
+                  <textPath href="#otwTextPath" startOffset="50%" textAnchor="middle">#IMMEDIATELY AVAILABLE</textPath>
                 </text>
               </svg>
             )}

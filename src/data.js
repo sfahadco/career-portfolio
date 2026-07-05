@@ -82,7 +82,6 @@ export const PORTFOLIO = {
       role: 'Full-Stack Engineer',
       period: 'Nov 2025 — Jun 2026',
       location: 'Remote',
-      current: true,
       points: [
         'Architected and shipped a multi-tenant email marketing SaaS end to end (Laravel 12, React 19, TypeScript, PostgreSQL).',
         'Built Redis-backed queue infrastructure, containerized the stack with Docker Compose, and automated deploys via GitHub Actions → OCI.',
