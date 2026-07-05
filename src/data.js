@@ -100,6 +100,7 @@ export const PORTFOLIO = {
       ],
       stack: ['PHP', 'Symfony', 'gRPC', 'LangChain', 'AWS'],
       award: 'Individual Excellence Award',
+      awardCert: '/23920__IndividualExcellence__FahadShaikh.pdf',
     },
     {
       company: 'Seeken Enterprise',

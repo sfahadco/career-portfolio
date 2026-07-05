@@ -48,7 +48,7 @@ export default function Hero() {
           </div>
 
           {/* portrait */}
-          <div className="hero-portrait" style={{ flex: 'none', width: 340 }}>
+          <div className="hero-portrait" style={{ flex: 'none', width: 340, position: 'relative' }}>
             <img
               src="/me.jpeg"
               alt={id.name}
@@ -66,6 +66,26 @@ export default function Hero() {
                 boxShadow: 'var(--shadow-lg), var(--glow-accent-soft)',
               }}
             />
+            {id.available && (
+              <svg viewBox="0 0 100 100" aria-hidden="true"
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none', overflow: 'visible' }}>
+                <defs>
+                  {/* solid green concentrated at the bottom-left, fading out toward top-right — a
+                     continuous ring, no hard ends. Axis runs top-right → bottom-left. */}
+                  <linearGradient id="otwGrad" x1="1" y1="0.05" x2="0.05" y2="1">
+                    <stop offset="0.42" stopColor="#7cb342" stopOpacity="0" />
+                    <stop offset="0.62" stopColor="#6aa83c" stopOpacity="1" />
+                    <stop offset="1" stopColor="#2f6b1f" stopOpacity="1" />
+                  </linearGradient>
+                  {/* text arc centred on the bottom-left (~128°), reading up-left → bottom-right */}
+                  <path id="otwTextPath" d="M 4.03 51.6 A 46 46 0 0 0 59.56 95.0" fill="none" />
+                </defs>
+                <circle cx="50" cy="50" r="44" fill="none" stroke="url(#otwGrad)" strokeWidth="12" />
+                <text fill="#ffffff" fontFamily="var(--font-display)" fontWeight="700" fontSize="6.4" letterSpacing="0.6">
+                  <textPath href="#otwTextPath" startOffset="50%" textAnchor="middle">#OPENTOWORK</textPath>
+                </text>
+              </svg>
+            )}
           </div>
         </div>
 

@@ -13,7 +13,7 @@ export default function Experience() {
       <div style={{ maxWidth: 'var(--container)', margin: '0 auto', padding: '0 var(--gutter)' }}>
         <div style={{ marginBottom: 52 }}>
           <SectionLabel index="02">Career</SectionLabel>
-          <h2 style={{ marginTop: 18, fontSize: 'var(--fs-h2)', maxWidth: '16ch' }}>Six years, five teams.</h2>
+          <h2 style={{ marginTop: 18, fontSize: 'var(--fs-h2)', maxWidth: '18ch' }}>Seven years, four teams.</h2>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: 0 }}>
@@ -41,9 +41,19 @@ export default function Experience() {
                   ))}
                 </ul>
                 {job.award && (
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 16, color: 'var(--status-warning)', fontFamily: 'var(--font-mono)', fontSize: 12.5 }}>
-                    <Ic.Award size={15} /> {job.award}
-                  </div>
+                  job.awardCert ? (
+                    <a href={job.awardCert} download
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 16, color: 'var(--status-warning)', fontFamily: 'var(--font-mono)', fontSize: 12.5, cursor: 'pointer', transition: 'opacity var(--dur-fast)' }}
+                      onMouseEnter={(e) => e.currentTarget.style.opacity = 0.7}
+                      onMouseLeave={(e) => e.currentTarget.style.opacity = 1}>
+                      <Ic.Award size={15} /> {job.award}
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, color: 'var(--text-tertiary)' }}><Ic.Download size={13} /> Certificate</span>
+                    </a>
+                  ) : (
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 16, color: 'var(--status-warning)', fontFamily: 'var(--font-mono)', fontSize: 12.5 }}>
+                      <Ic.Award size={15} /> {job.award}
+                    </div>
+                  )
                 )}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginTop: 16 }}>
                   {job.stack.map((s) => <Tag key={s} size="sm">{s}</Tag>)}
