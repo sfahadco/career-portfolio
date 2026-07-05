@@ -285,6 +285,8 @@ a { color: inherit; text-decoration: none; }
   .contact-grid { grid-template-columns: 1fr !important; }
   .xp-row { grid-template-columns: 1fr !important; gap: 12px !important; }
   .hero-stats { grid-template-columns: 1fr 1fr !important; row-gap: 28px; }
+  .hero-top { flex-direction: column-reverse !important; align-items: flex-start !important; gap: 36px !important; }
+  .hero-portrait { width: 100% !important; max-width: 300px !important; }
   .nav-links { display: none !important; }
   .nav-desktop-actions { display: none !important; }
   .nav-menu-btn { display: inline-flex !important; }
